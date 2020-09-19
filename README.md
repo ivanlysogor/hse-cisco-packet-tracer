@@ -1,5 +1,5 @@
 # Cisco Packet Tracer Lab
-The objective of this task is to configure following network:
+The objective of this task is to configure the following network:
 ![Network topology](diagram.png)
 
 Configuration guidlines:
@@ -49,7 +49,7 @@ Setting up hostname
 ```
 hostname <name>
 ```
-##### 1.2 Configure VTP mode transparent for all switches
+##### 1.2 Configure VTP mode transparent for all switches (more information available here - https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/16-12/configuration_guide/vlan/b_1612_vlan_3650_cg/m-1612-vlan-vtp-cg.html)
 ```
 vtp mode transparent
 ```
