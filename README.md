@@ -53,7 +53,7 @@ hostname <name>
 ```
 vtp mode transparent
 ```
-##### 1.3 Configure VLANs for all switches
+##### 1.3 Configure VLANs for all switches (more information available here - https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/16-12/configuration_guide/vlan/b_1612_vlan_3650_cg/m-1612-vlan-vlan-cg.html)
 ```
 vlan <id>
   name <name>
@@ -73,7 +73,7 @@ interface Po1
   <enter portchannel configuration>
 ```
 
-##### 1.5 Configure trunk interfaces between switches
+##### 1.5 Configure trunk interfaces between switches (more information available here - https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/16-12/configuration_guide/vlan/b_1612_vlan_3650_cg/m-1612-vlan-trunk-cg.html)
 ```
 interface <X>
   switchport trunk encap dot1q
