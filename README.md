@@ -5,7 +5,8 @@ The objective of this task is to configure the following network:
 Configuration guidlines:
 - Corporate network
   - Corporate network IP address range - 192.168.64.0/22
-  - Corporate network AS Number - AS65591
+  - Corporate network AS Number - AS65511
+  - Corporate network IPv6 address range - fc:0:40/48
   - User VLAN - VLAN101 (name User101)
   - Dummy VLAN - VLAN999 (name Dummy)
   - VTP mode - transparent
@@ -13,12 +14,15 @@ Configuration guidlines:
   - HSRP Master - Spine1
   - OSPF Area 0
 - ISP Network
-  - ISP Network IP address range - 10.10.0.0/16
+  - SP1 Network IP address range - 10.10.0.0/16
+  - SP1 Network IPv6 address range - fc:0:80/48
   - SP1 AS Number - AS65501
+  - SP2 Network IP address range - 10.11.0.0/16
+  - SP2 Network IPv6 address range - fc:0:c0/48
   - SP2 AS Number - AS65502
 - DC Network
   - DC Network IP address range - 172.20.0.0/16
-  - DC Network AS Number - AS65590
+  - DC Network AS Number - AS65511
   
 #### Introduction
 Enable mode and Configuration mode
@@ -65,14 +69,6 @@ interface X
   switchport access vlan <id>
   spanning-tree portfast
 ```
-##### 1.4 Configure Etherchannel link between Spine1 and Spine2
-```
-interface X
-  channel-group 1 mode on
-interface Po1
-  <enter portchannel configuration>
-```
-
 ##### 1.5 Configure trunk interfaces between switches (more information available here - https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/16-12/configuration_guide/vlan/b_1612_vlan_3650_cg/m-1612-vlan-trunk-cg.html)
 ```
 interface <X>
@@ -104,4 +100,19 @@ interface vlan<x>
   ip address <address> <mask>
   standby <ip address>
   standby priority <priority>
+```
+### 3 Dynamic routing configuration
+#### 3.1 OSPF Configuration
+```
+router ospf <id>
+  network <net> <wildcard> area <x>
+  default-information originate
+ip route 0.0.0.0 0.0.0.0 null0
+```
+#### 3.2 BGP Configuration
+```
+router bgp <as-num>
+  network <net> <mask>
+  neighbor <ip> remote-as <as-num>
+ip route <net> <mask> null0
 ```
