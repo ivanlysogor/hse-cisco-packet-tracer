@@ -22,6 +22,7 @@ Configuration guidlines:
   - SP2 AS Number - AS65502
 - DC Network
   - DC Network IP address range - 172.20.0.0/16
+  - DC Network IPv6 address range - fc:0:40/48
   - DC Network AS Number - AS65511
   
 #### Introduction
