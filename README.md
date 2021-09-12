@@ -5,7 +5,7 @@ The objective of this task is to configure the following network:
 Configuration guidlines:
 - Corporate network
   - Corporate network IP address range - 192.168.64.0/22
-  - Corporate network AS Number - AS65511
+  - Corporate network AS Number - AS65411
   - Corporate network IPv6 address range - fc:0:40/48
   - User VLAN - VLAN101 (name User101)
   - Dummy VLAN - VLAN999 (name Dummy)
@@ -16,14 +16,14 @@ Configuration guidlines:
 - ISP Network
   - SP1 Network IP address range - 10.10.0.0/16
   - SP1 Network IPv6 address range - fc:0:80/48
-  - SP1 AS Number - AS65501
+  - SP1 AS Number - AS65401
   - SP2 Network IP address range - 10.11.0.0/16
   - SP2 Network IPv6 address range - fc:0:c0/48
-  - SP2 AS Number - AS65502
+  - SP2 AS Number - AS65402
 - DC Network
   - DC Network IP address range - 172.20.0.0/16
   - DC Network IPv6 address range - fc:0/48
-  - DC Network AS Number - AS65511
+  - DC Network AS Number - AS65412
   
 #### Introduction
 Enable mode and Configuration mode
